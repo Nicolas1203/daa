@@ -1,5 +1,5 @@
 # Implementation of Domain Aware Augmentations
-This repository contains the code of our paper titled *Overcoming Underfitting in Unsupervised Online General Continual Learning*.
+This repository contains the code of our paper titled *Domain Aware augmentations: Overcoming Underfitting in Unsupervised Online General Continual Learning*.
 
 ## Paper link
 Coming soon.
