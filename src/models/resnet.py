@@ -3,15 +3,8 @@
 import torch
 import torch.nn.functional as F
 import torch.nn as nn
-import torchvision.models as models
-import numpy as np
-import os
-import logging as lg
-import random as r
 
 from torch.nn.functional import relu, avg_pool2d
-from torchvision.models import resnet18, resnet34
-from scipy import optimize
 
 if torch.cuda.is_available():
     dev = "cuda:0"

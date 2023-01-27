@@ -89,7 +89,6 @@ def main():
                         dataloader=dataloaders[task_name],
                         task_name=task_name,
                         task_id=task_id,
-                        # dl_train=dataloaders['train']
                         )
                 else:
                     model_state = os.path.join(args.ckpt_root, f"{args.tag}/{args.run_id}/ckpt_train{task_id}.pth")
