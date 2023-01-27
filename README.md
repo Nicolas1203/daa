@@ -245,5 +245,64 @@ When using a configuration file, parameters specified in the .yaml cannot be ove
 python main.py --results-root ./results/daa/tiny/ --data-root /data/dataset/torchvision --config config/config_files/tiny/4aug,1mixup,1cutmix,1style,tiny,mi20_m2000mbs200sbs100.yaml
 ```
 
-# Cite
+### output example
+Output of the command above should contain performances like this.
+```bash
+root - INFO - --------------------FORGETTING--------------------
+root - INFO - ncm     0.0000   nan      nan      nan      nan      0.0000
+root - INFO - ncm     0.2885   0.0000   nan      nan      nan      0.2885
+root - INFO - ncm     0.2935   0.2225   0.0000   nan      nan      0.2580
+root - INFO - ncm     0.4615   0.3190   0.0370   0.0000   nan      0.2725
+root - INFO - ncm     0.5815   0.2155   0.1795   0.0250   0.0000   0.2504
+root - INFO - --------------------ACCURACY--------------------
+root - INFO - ncm     0.7750   nan      nan      nan      nan      0.7750
+root - INFO - ncm     0.4865   0.5260   nan      nan      nan      0.5062
+root - INFO - ncm     0.4815   0.3035   0.5150   nan      nan      0.4333
+root - INFO - ncm     0.3135   0.2070   0.4780   0.2875   nan      0.3215
+root - INFO - ncm     0.1935   0.3105   0.3355   0.2625   0.3045   0.2813
+```        
+
+### Methods name
+Name of each methods can be slightly different between the one in the paper and the one in the tag of the configuration file. We give have the name and tag correspondance here.
+
+| Name in paper | tag in configuration file |
+|-------------- |---------------------------|
+| offline       |     offline               |
+| fine-tuned    |         finetune          |
+|       ER      |       er                  |
+|     SCR       |       scr                 |
+|     AGEM      |       agem                |
+|     GDUMB     |       gdumb               |
+|     STAM      |       stam                |
+|     LUMP      |         lump              |
+|   SimCLR      |     2aug                  |
+|   DAA (ours)  |4aug,1mixup,1cutmix,1style |  
+|---------------|---------------------------|
+
+## Metrics
+In this work we defined new metrics for Continual Learning, more suited to identify a learners' behaviour.
+
+### Rescaled Average Accuracy
+$$
+\begin{equation}
+\begin{aligned}
+    RAA_k(g)  = \gamma_k AA_k(g)\ \ \  \text{with}\ \ \  \gamma_k =\frac{C_k}{C_K}
+\end{aligned}
+\end{equation}
+$$
+
+### Rescaled Average Forgetting
+$$
+\begin{equation}
+\begin{aligned}
+    &RAF_k(g) = \beta_k AF_k(g) \\
+    \text{with}\ \ \ \ \beta_k& = \frac{(H_K-1)(k-1)}{(H_k-1)(K-1)}\ \ \text{and}\ \  H_k = \sum_{i=1}^k \frac{1}{i}
+\end{aligned}
+\end{equation}
+$$
+
+### Implementation
+These metrics are not displayed during training in this code version. Their implementation can be found in `src/utils/metrics.py`. Usage of our metrics for graph generation is shown with some examples in `notebooks/graphs.ipynb`.
+
+## Cite
 Coming soon.

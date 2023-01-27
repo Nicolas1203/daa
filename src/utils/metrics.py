@@ -46,8 +46,8 @@ def get_rand_perfs(n_tasks, n_classes, metric):
     return rand_perf
 
 def raa(acc, n_tasks, n_classes):
-    rand_clf_perf = get_rand_perfs(n_tasks, n_classes, metric='acc')
-    raa = (acc /rand_clf_perf) / (1/n_classes)
+    rand_clf_acc = get_rand_perfs(n_tasks, n_classes, metric='acc')
+    raa = (acc /rand_clf_acc) / (1/n_classes)
 
     return raa
 
@@ -56,5 +56,5 @@ def raf(fgt, n_tasks, n_classes):
 
     # This uses the fact that max(uRAF) = \frac{1}{AF_K(Rand_{C_K})}
     # This can be seen by combining Lemma B.1 and Lemma B.2 from our paper.
-    raf = (fgt / rand_clf_fgt) * rand_clf_fgt.mean(0)[-1]  # raf = uRAF * AF_K(Rand_CK)
+    raf = (fgt / rand_clf_fgt) * rand_clf_fgt.mean(0)[-1] # raf = uRAF * AF_K(Rand_CK)
     return raf
