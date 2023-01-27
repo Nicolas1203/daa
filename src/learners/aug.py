@@ -128,7 +128,6 @@ class AugLearner(BaseLearner):
                     # Loss
                     loss = self.criterion(
                         features=projections,
-                        # proj_idx=combined_idx,
                         labels=combined_y if self.params.supervised else None,
                         )
                     loss = loss.mean()

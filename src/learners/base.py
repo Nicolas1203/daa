@@ -464,25 +464,4 @@ class BaseLearner(torch.nn.Module):
     def after_train(self, **kwargs):
         """Action to do after training the model on every tasks
         """
-        if self.params.review:
-            for _ in range(self.params.rv_iters):
-                mem_x, mem_y = self.buffer.random_retrieve(n_imgs=self.params.mem_batch_size)
-                
-                # Augment
-                mem_x_aug1 = self.transform_train(mem_x)
-                mem_x_aug2 = self.transform_train(mem_x)
-
-                # Inference
-                self.model = self.model.train()
-                _, projections1 = self.model(mem_x_aug1.to(self.device))  # (batch_size, projection_dim)
-                _, projections2 = self.model(mem_x_aug2.to(self.device))
-                projections = torch.cat([projections1.unsqueeze(1), projections2.unsqueeze(1)], dim=1)
-    
-                # Loss
-                loss = self.criterion(features=projections, labels=mem_y)
-                self.loss = loss.item()
-                self.optim.zero_grad()
-                loss.backward()
-                self.optim.step()
-        else:
-            pass
+        pass

@@ -54,7 +54,7 @@ class CELearner(BaseLearner):
             # preds = nn.Softmax(dim=1)(logits)
 
             # Loss
-            loss = self.criterion(logits, batch_y.long(), proj_norm=False)
+            loss = self.criterion(logits, batch_y.long())
             self.loss = loss.item() 
             self.optim.zero_grad()
             loss.backward()
