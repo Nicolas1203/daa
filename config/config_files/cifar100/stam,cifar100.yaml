@@ -1,0 +1,3 @@
+learner         :       STAM 
+dataset         :       cifar100
+tag             :       stam,cifar100

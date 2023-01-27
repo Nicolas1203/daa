@@ -1,0 +1,6 @@
+
+learner         :       GDUMB
+dataset         :       cifar10
+n_tasks         :       5
+mem_size        :       200
+tag             :       gdumb,cifar10

@@ -1,0 +1,9 @@
+training_type   :       uni
+learner         :       CE
+dataset         :       cifar100
+optim           :       SGD
+lr              :       0.07
+batch_size      :       128
+supervised      :       True
+epochs          :       50
+tag             :       offline,cifar100

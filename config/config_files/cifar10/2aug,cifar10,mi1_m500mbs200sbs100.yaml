@@ -1,0 +1,14 @@
+
+learner         :       AUG
+dataset         :       cifar10
+mem_iters       :       1
+n_augs          :       2
+n_tasks         :       5
+optim           :       SGD
+lr              :       0.07
+mem_size        :       500
+batch_size      :       100
+mem_batch_size  :       200
+tag             :       2aug,cifar10,mi1
+mix_coef        :       0.5
+mixup           :       False

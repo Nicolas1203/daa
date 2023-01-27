@@ -1,0 +1,12 @@
+
+learner         :       SCR
+dataset         :       tiny
+mem_iters       :       1
+n_tasks         :       20
+optim           :       SGD
+lr              :       0.07
+mem_size        :       2000
+batch_size      :       100
+mem_batch_size  :       200
+supervised      :       True
+tag             :       scr,tiny,mi1

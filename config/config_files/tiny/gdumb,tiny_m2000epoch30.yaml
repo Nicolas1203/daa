@@ -1,0 +1,6 @@
+
+learner         :       GDUMB
+dataset         :       tiny
+n_tasks         :       20
+mem_size        :       2000
+tag             :       gdumb,tiny

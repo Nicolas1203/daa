@@ -1,0 +1,9 @@
+training_type   :       inc
+learner         :       CE
+dataset         :       cifar10
+optim           :       SGD
+lr              :       0.07
+batch_size      :       100
+supervised      :       True
+epochs          :       1
+tag             :       finetune,cifar10
