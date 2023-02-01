@@ -4,6 +4,10 @@ This repository contains the code of our paper titled *Domain Aware augmentation
 ## Paper link
 Coming soon.
 
+## Overall procedure
+
+![w:1000](archi.png)
+
 ## Project structure
 ```bash
 ./checkpoints                   # Default checkpoints folder
