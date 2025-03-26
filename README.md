@@ -1,8 +1,8 @@
 # Implementation of Domain Aware Augmentations
-This repository contains the code of our paper titled *Domain Aware augmentations: Overcoming Underfitting in Unsupervised Online General Continual Learning*.
+This repository contains the code of our paper titled *Domain-Aware Augmentations for Unsupervised Online General Continual Learning*.
 
 ## Paper link
-Coming soon.
+https://proceedings.bmvc2023.org/452/
 
 ## Overall procedure
 
@@ -267,7 +267,7 @@ root - INFO - ncm     0.1935   0.3105   0.3355   0.2625   0.3045   0.2813
 ```        
 
 ### Methods name
-Name of each methods can be slightly different between the one in the paper and the one in the tag of the configuration file. We give have the name and tag correspondance here.
+Name of each methods can be slightly different between the one in the paper and the one in the tag of the configuration file. We give have the name and tag correspondence here.
 
 | Name in paper | tag in configuration file |
 |-------------- |---------------------------|
@@ -282,31 +282,6 @@ Name of each methods can be slightly different between the one in the paper and 
 |   SimCLR      |     2aug                  |
 |   DAA (ours)  |4aug,1mixup,1cutmix,1style |  
 |---------------|---------------------------|
-
-## Metrics
-In this work we defined new metrics for Continual Learning, more suited to identify a learners' behaviour.
-
-### Rescaled Average Accuracy
-$$
-\begin{equation}
-\begin{aligned}
-    RAA_k(g)  = \gamma_k AA_k(g)\ \ \  \text{with}\ \ \  \gamma_k =\frac{C_k}{C_K}
-\end{aligned}
-\end{equation}
-$$
-
-### Rescaled Average Forgetting
-$$
-\begin{equation}
-\begin{aligned}
-    &RAF_k(g) = \beta_k AF_k(g) \\
-    \text{with}\ \ \ \ \beta_k& = \frac{(H_K-1)(k-1)}{(H_k-1)(K-1)}\ \ \text{and}\ \  H_k = \sum_{i=1}^k \frac{1}{i}
-\end{aligned}
-\end{equation}
-$$
-
-### Implementation
-These metrics are not displayed during training in this code version. Their implementation can be found in `src/utils/metrics.py`. Usage of our metrics for graph generation is shown with some examples in `notebooks/graphs.ipynb`.
 
 ## Cite
 
