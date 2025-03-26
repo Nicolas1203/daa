@@ -309,4 +309,14 @@ $$
 These metrics are not displayed during training in this code version. Their implementation can be found in `src/utils/metrics.py`. Usage of our metrics for graph generation is shown with some examples in `notebooks/graphs.ipynb`.
 
 ## Cite
-Coming soon.
+
+```latex
+@inproceedings{Michel_2023_BMVC,
+author={Michel, Nicolas and Negrel, Romain and Chierchia, Giovanni and Bercher, Jean-Fran{\c{c}}ois},
+title     = {Domain-Aware Augmentations for Unsupervised Online General Continual Learning},
+booktitle = {34th British Machine Vision Conference 2023, {BMVC} 2023, Aberdeen, UK, November 20-24, 2023},
+publisher = {BMVA},
+year      = {2023},
+url       = {https://papers.bmvc2023.org/0452.pdf}
+}
+```
